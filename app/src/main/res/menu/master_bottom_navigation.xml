@@ -9,7 +9,7 @@
     <item
         android:id="@+id/navigationMyCourses"
         android:icon="@drawable/ic_effort"
-        android:title="Courses" />
+        android:title="Currency" />
 
     <item
         android:id="@+id/navigationHome"
@@ -24,6 +24,6 @@
     <item
         android:id="@+id/navigationMyProfile"
         android:icon="@drawable/ic_user"
-        android:title="User" />
+        android:title="Account" />
 
 </menu>
