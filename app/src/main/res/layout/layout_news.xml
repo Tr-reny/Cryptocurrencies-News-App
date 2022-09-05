@@ -35,6 +35,7 @@
         android:text="The Bitcoin (BTC) network’s hashrate – or computing power that goes into mining new coins – could reach 327 EH/s by the end of the year, a research note from the crypto-focused financial services firm BitOoda has predicted, after the firm cut an earlier forecast for the year."/>
 
     <TextView
+        android:id="@+id/tv_time_stamp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
