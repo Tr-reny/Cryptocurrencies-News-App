@@ -31,10 +31,35 @@
 
     </RelativeLayout>
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="?attr/actionBarSize">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingRight="@dimen/normalPadding"
+        android:paddingLeft="@dimen/normalPadding">
+
+    <!--replace with recycler view-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
+    </LinearLayout>
+
+
     <!--replace with recycler view-->
     <include
         layout="@layout/layout_featured_news"/>
 
     <!--replace with recycler view-->
+
+
+
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

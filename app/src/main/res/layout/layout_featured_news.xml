@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?android:attr/selectableItemBackground">
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical">
 
     <TextView
         style="@style/viewParent.headerText"
-        android:textSize="16sp"
-        android:text="Digital Assets Could Become ‘Permanent Feature’ \n of Finance, Singapore Central Banker Argues"/>
+        android:text="Digital Assets Could Become ‘Permanent Feature’ \n of Finance, Singapore Central Banker Argues"
+        android:textSize="16sp" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:adjustViewBounds="true"
         android:cropToPadding="true"
-        android:layout_marginTop="5dp"
         android:src="@drawable/featured_news" />
 
     <TextView
         style="@style/miniTitle"
-        android:maxLines="2"
-        android:textColor="@color/featuredNewsContentColor"
         android:layout_marginTop="5dp"
-        android:text="Digital assets could become “a permanent feature of the financial landscape,” although decentralized cryptoassets like bitcoin (BTC) “fail as money,” Singapore’s central bank director has argued."/>
+        android:maxLines="2"
+        android:text="Digital assets could become “a permanent feature of the financial landscape,” although decentralized cryptoassets like bitcoin (BTC) “fail as money,” Singapore’s central bank director has argued."
+        android:textColor="@color/featuredNewsContentColor" />
 </LinearLayout>
