@@ -22,14 +22,16 @@ Cryptocurrencies-News-App
 <a href="https://github.com/Tr-reny/Cryptocurrencies-News-App/LICENSE">
  <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Cryptocurrencies News App is released under the MIT license." />
   </a>
-
- <a href="https://img.shields.io/github/stars/Tr-reny/Cryptocurrencies-News-App?style=social">
+  
+   <a href="https://img.shields.io/github/stars/Tr-reny/Cryptocurrencies-News-App?style=social">
   <img src="https://img.shields.io/github/stars/Tr-reny/Cryptocurrencies-News-App?style=social" alt="Stars" />
  </a>
 
 <a href="https://komarev.com/ghpvc/?username=Cryptocurrencies-News-App&color=green">
   <img src="https://komarev.com/ghpvc/?username=Cryptocurrencies-News-App&color=green" />
  </a>
+ 
+ 
 
 </p>
 
