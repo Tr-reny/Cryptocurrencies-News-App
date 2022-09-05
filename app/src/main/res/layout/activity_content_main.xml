@@ -31,5 +31,10 @@
 
     </RelativeLayout>
 
+    <!--replace with recycler view-->
+    <include
+        layout="@layout/layout_featured_news"/>
+
+    <!--replace with recycler view-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
