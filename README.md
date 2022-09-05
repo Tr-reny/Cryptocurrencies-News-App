@@ -19,7 +19,7 @@ Cryptocurrencies-News-App
 
 <p align="center">
 
-<a href="https://github.com/Tr-reny/Cryptocurrencies-News-App/LICENSE">
+<a href="https://github.com/Tr-reny/Cryptocurrencies-News-App/blob/master/LICENCE">
  <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Cryptocurrencies News App is released under the MIT license." />
   </a>
   
