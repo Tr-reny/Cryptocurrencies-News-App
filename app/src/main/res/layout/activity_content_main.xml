@@ -57,6 +57,22 @@
 
     <!--replace with recycler view-->
 
+        <include
+            layout="@layout/layout_news"/>
+
+        <include
+            layout="@layout/layout_news"/>
+
+        <include
+            layout="@layout/layout_news"/>
+
+        <include
+            layout="@layout/layout_news"/>
+        <include
+            layout="@layout/layout_news"/>
+
+        <include
+            layout="@layout/layout_news"/>
 
 
     </LinearLayout>

@@ -7,7 +7,7 @@
 
     <TextView
         style="@style/viewParent.headerText"
-        android:text="Digital Assets Could Become ‘Permanent Feature’ \n of Finance, Singapore Central Banker Argues"
+        android:text="Digital Assets Could Become ‘Permanent Feature’ of Finance, Singapore Central Banker Argues"
         android:textSize="16sp" />
 
     <ImageView
