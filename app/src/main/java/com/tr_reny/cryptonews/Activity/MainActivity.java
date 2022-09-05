@@ -40,9 +40,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     return true;
                 case R.id.navigationHome:
                     return true;
-                case  R.id.navigationSearch:
+                case R.id.navigationSearch:
                     return true;
-                case  R.id.navigationMenu:
+                case R.id.navigationMenu:
                     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                     drawer.openDrawer(GravityCompat.START);
                     return true;
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if(new DarkModePrefManager(this).isNightMode()){
+        if (new DarkModePrefManager(this).isNightMode()) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
 
