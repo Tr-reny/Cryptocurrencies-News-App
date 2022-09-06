@@ -44,9 +44,9 @@ Cryptocurrencies-News-App
 * Bottom Navigation View
 * Navigation Drawer
 * SearchBar
-  *Featured News
+* Featured News
 * News Layout
-*
+* 
 ## Screenshoot
 ![Screenshot_20220905-115246](https://user-images.githubusercontent.com/57016982/188411532-98659423-3dc2-457b-85b5-30fdd082d183.png)
 ![Screenshot_20220905-115255](https://user-images.githubusercontent.com/57016982/188411585-3400ac5f-f11d-43ff-bff4-ff192c0db22c.png)
