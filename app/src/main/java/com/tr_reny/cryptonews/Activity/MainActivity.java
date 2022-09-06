@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.tr_reny.cryptonews.Adapter.NewsAdapter;
 import com.tr_reny.cryptonews.BottomNavigationBehavior;
 import com.tr_reny.cryptonews.DarkModePrefManager;
 import com.tr_reny.cryptonews.Interface.MboumFinanceAPI;
@@ -156,9 +157,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void PutDataIntoRecylerView(List<News> newsList) {
 
-        MyAdapter myAdapter = new MyAdapter(this,newsList);
+        NewsAdapter newsAdapter = new NewsAdapter(this,newsList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(myAdapter);
+        recyclerView.setAdapter(newsAdapter);
 
 
     }
