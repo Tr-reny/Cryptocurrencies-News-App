@@ -87,7 +87,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
 
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -123,20 +122,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
-    private void getNews(){
-        Call<List<News>> call = mboumFinanceAPI.getMarketNews("https://mboum-finance.p.rapidapi.com","7b17418753msh4f16608e0aa78d7p1a6fe6jsnfc06e90efe18");
+    private void getNews() {
+        Call<List<News>> call = mboumFinanceAPI.getMarketNews("https://mboum-finance.p.rapidapi.com", "7b17418753msh4f16608e0aa78d7p1a6fe6jsnfc06e90efe18");
         call.enqueue(new Callback<List<News>>() {
             @Override
             public void onResponse(Call<List<News>> call, Response<List<News>> response) {
-                if (!response.isSuccessful()){
-                    Toast.makeText(MainActivity.this,"Code: " + response.code() ,Toast.LENGTH_LONG);
+                if (!response.isSuccessful()) {
+                    Toast.makeText(MainActivity.this, "Code: " + response.code(), Toast.LENGTH_LONG);
                     return;
                 }
                 List<News> newsList1 = response.body();
-                for (News news : newsList1){
+                for (News news : newsList1) {
 
                     newsList.add(news);
-            }
+                }
 
                 PutDataIntoRecylerView(newsList);
 
@@ -145,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             @Override
             public void onFailure(Call<List<News>> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Error: " + t.getMessage() , Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_LONG).show();
                 t.printStackTrace();
             }
         });
@@ -154,13 +153,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void PutDataIntoRecylerView(List<News> newsList) {
 
-        NewsAdapter newsAdapter = new NewsAdapter(this,newsList);
+        NewsAdapter newsAdapter = new NewsAdapter(this, newsList);
         recyclerViewNews.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewNews.setAdapter(newsAdapter);
 
 
     }
-
 
 
     @Override

@@ -28,7 +28,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v;
         LayoutInflater layoutInflater = LayoutInflater.from(mContext);
-        v = layoutInflater.inflate(R.layout.layout_news,parent,false);
+        v = layoutInflater.inflate(R.layout.layout_news, parent, false);
         return new MyViewHolder(v);
     }
 
@@ -45,8 +45,9 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
     }
 
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView title,pubDate,guid;
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
+        TextView title, pubDate, guid;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
