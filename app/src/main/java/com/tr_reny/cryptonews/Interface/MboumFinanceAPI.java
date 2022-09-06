@@ -1,5 +1,7 @@
 package com.tr_reny.cryptonews.Interface;
 
+import com.tr_reny.cryptonews.Model.News;
+
 import java.util.List;
 
 import retrofit2.Call;
@@ -12,7 +14,7 @@ public interface MboumFinanceAPI {
     //	.addHeader("X-RapidAPI-Host", "mboum-finance.p.rapidapi.com")
 
     @GET("ne/news")
-    Call<List<MboumFinanceAPI>> getMarketNews(
+    Call<List<News>> getMarketNews(
             @Header("X-RapidAPI-Host") String api,
             @Header("X-RapidAPI-Key") String apiKey);
 }

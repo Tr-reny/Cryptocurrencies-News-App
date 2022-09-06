@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private MboumFinanceAPI mboumFinanceAPI;
     private List<News> newsList;
-    private RecyclerView recyclerView;
+    private RecyclerView recyclerViewNews;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -107,10 +107,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         newsList = new ArrayList<>();
+        recyclerViewNews = findViewById(R.id.recyclerViewNews);
 
 
         //Retrofit
-        String url = "https://mboum-finance.p.rapidapi.com";
+        String url = "https://mboum-finance.p.rapidapi.com/";
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -123,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void getNews(){
-        Call<List<News>> call = mboumFinanceAPI.getMarketNews();
+        Call<List<News>> call = mboumFinanceAPI.getMarketNews("https://mboum-finance.p.rapidapi.com","7b17418753msh4f16608e0aa78d7p1a6fe6jsnfc06e90efe18");
         call.enqueue(new Callback<List<News>>() {
             @Override
             public void onResponse(Call<List<News>> call, Response<List<News>> response) {
@@ -133,10 +134,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
                 List<News> newsList1 = response.body();
                 for (News news : newsList1){
-              /*     String content = "";
-                    content += "title: " + news.getTitle() + "\n";
-                    content += "Source: " + news.getMsource() + "\n\n";
-                    tv_results.append(content);*/
 
                     newsList.add(news);
             }
@@ -158,8 +155,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void PutDataIntoRecylerView(List<News> newsList) {
 
         NewsAdapter newsAdapter = new NewsAdapter(this,newsList);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(newsAdapter);
+        recyclerViewNews.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewNews.setAdapter(newsAdapter);
 
 
     }
