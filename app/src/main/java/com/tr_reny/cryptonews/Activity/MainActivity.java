@@ -9,6 +9,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -17,7 +18,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.tr_reny.cryptonews.BottomNavigationBehavior;
 import com.tr_reny.cryptonews.DarkModePrefManager;
+import com.tr_reny.cryptonews.Interface.MboumFinanceAPI;
+import com.tr_reny.cryptonews.Model.News;
 import com.tr_reny.cryptonews.R;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     /**
@@ -25,6 +34,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
      * This is a Crypto News App that Gets Information from Crypto News API
      */
     private BottomNavigationView bottomNavigationView;
+
+    private MboumFinanceAPI mboumFinanceAPI;
+    private List<News> newsList;
+    private RecyclerView recyclerView;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -66,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
 
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -82,6 +96,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         layoutParams.setBehavior(new BottomNavigationBehavior());
 
         bottomNavigationView.setSelectedItemId(R.id.navigationHome);
+
+
+        newsList = new ArrayList<>();
+
+
+        //Retrofit
+        String url = "https://mboum-finance.p.rapidapi.com";
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(url)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        mboumFinanceAPI = retrofit.create(MboumFinanceAPI.class);
+        getNews();
+
 
     }
 
