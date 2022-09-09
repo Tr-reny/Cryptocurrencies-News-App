@@ -1,6 +1,7 @@
 package com.tr_reny.config;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         //retrofit
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("")
+                .baseUrl("https://mboum-finance.p.rapidapi.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -39,11 +40,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getNews(){
-        Call<List<News>> call = mboumFinanceAPI.getMarketNews("https://mboum-finance.p.rapidapi.com", "7b17418753msh4f16608e0aa78d7p1a6fe6jsnfc06e90efe18");
+        Call<List<News>> call = mboumFinanceAPI.getMarketNews("mboum-finance.p.rapidapi.com", "7b17418753msh4f16608e0aa78d7p1a6fe6jsnfc06e90efe18");
         call.enqueue(new Callback<List<News>>() {
             @Override
             public void onResponse(Call<List<News>> call, Response<List<News>> response) {
-                if
+                if (!response.isSuccessful()){
+
+                    return;
+                }
+
+                List<News> newsList1 = response.body();
+                for (News news : newsList1) {
+
+                    newsList.add(news);
+                }
+
+                PutDataIntoRecylerView(newsList);
 
             }
 
@@ -52,6 +64,15 @@ public class MainActivity extends AppCompatActivity {
                 t.printStackTrace();
             }
         });
+    }
+
+    private void PutDataIntoRecylerView(List<News> newsList) {
+
+        NewsAdapter newsAdapter = new NewsAdapter(this, newsList);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(newsAdapter);
+
+
     }
 
 
