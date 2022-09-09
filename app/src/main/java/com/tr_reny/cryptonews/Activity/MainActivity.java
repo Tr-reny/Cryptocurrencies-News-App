@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onCreateOptionsMenu(@NonNull Menu menu) {
 
-        getMenuInflater().inflate(R.menu.menu_item, menu);
+        getMenuInflater().inflate(R.menu.search_bar, menu);
         MenuItem menuItem = menu.findItem(R.id.menu_search);
         SearchView searchView = (SearchView) menuItem.getActionView();
 
