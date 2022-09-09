@@ -20,13 +20,14 @@ import java.util.Locale;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> implements Filterable {
     private Context mContext;
-    private List<News> newsList;
-    private List<News> newsListFull;
 
-    public NewsAdapter(Context mContext, List<News> newsList) {
+    private ArrayList<News> newsArrayList;
+    private ArrayList<News> newsArrayListFull;
+
+    public NewsAdapter(Context mContext, ArrayList<News> newsArrayList) {
         this.mContext = mContext;
-        this.newsListFull = newsList;
-        this.newsList = new ArrayList<>(newsListFull);
+        this.newsArrayListFull = newsArrayList;
+        this.newsArrayList = new ArrayList<>(newsArrayListFull);
     }
 
     @NonNull
@@ -40,42 +41,46 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.title.setText(newsList.get(position).getTitle());
-        holder.guid.setText(newsList.get(position).getGuid());
-        holder.pubDate.setText(newsList.get(position).getPubDate());
+        holder.title.setText(newsArrayList.get(position).getTitle());
+        holder.guid.setText(newsArrayList.get(position).getGuid());
+        holder.pubDate.setText(newsArrayList.get(position).getPubDate());
 
     }
 
     @Override
     public int getItemCount() {
-        return newsList.size();
+        return newsArrayList.size();
     }
 
     @Override
     public Filter getFilter() {
-        return newsFilter;
+        return titleFilter;
     }
 
-    private final Filter newsFilter =  new Filter() {
+    // Filter the Containers
+    private final Filter titleFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
 
-            List<News> filteredNewsList = new ArrayList<>();
-
+            ArrayList<News> filteredTitle = new ArrayList<>();
             if (constraint == null || constraint.length() == 0){
-                filteredNewsList.addAll(newsListFull);
-            }else
-            {
-                String filterPatten = constraint.toString().toLowerCase(Locale.ROOT).trim();
-                for (News news : newsListFull ){
-                    if ( news.title.toLowerCase(Locale.ROOT).contains(filterPatten))
-                        filteredNewsList.add(news);
+                filteredTitle.addAll(newsArrayListFull);
+            }
+            else {
+                String filterPatten = constraint.toString().toLowerCase().trim();
+
+                for (News news : newsArrayListFull){
+
+                    if (news.getTitle().toLowerCase(Locale.ROOT).contains(filterPatten))
+                        filteredTitle.add(news);
+
                 }
             }
 
-       FilterResults results = new FilterResults();
-            results.values = filteredNewsList;
-            results.count = filteredNewsList.size();
+            FilterResults results = new FilterResults();
+            results.values = filteredTitle;
+            results.count = filteredTitle.size();
+
             return results;
 
         }
@@ -84,8 +89,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
         protected void publishResults(CharSequence constraint, FilterResults results) {
 
 
-            newsList.clear();
-            newsList.addAll((ArrayList)results.values);
+            newsArrayList.clear();
+            newsArrayList.addAll((ArrayList)results.values);
             notifyDataSetChanged();
 
 

@@ -15,10 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -49,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private BottomNavigationView bottomNavigationView;
 
     private MboumFinanceAPI mboumFinanceAPI;
-    private List<News> newsList;
+    private ArrayList<News> arrayListNews;
     private RecyclerView recyclerViewNews;
     private NewsAdapter newsAdapter;
 
@@ -111,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         bottomNavigationView.setSelectedItemId(R.id.navigationHome);
 
 
-        newsList = new ArrayList<>();
+        arrayListNews = new ArrayList<>();
         recyclerViewNews = findViewById(R.id.recyclerViewNews);
 
 
@@ -139,10 +137,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 List<News> newsList1 = response.body();
                 for (News news : newsList1) {
 
-                    newsList.add(news);
+                    arrayListNews.add(news);
                 }
 
-                PutDataIntoRecylerView(newsList);
+                PutDataIntoRecylerView(arrayListNews);
 
             }
 
@@ -153,16 +151,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 t.printStackTrace();
             }
         });
-    }
-
-
-    private void PutDataIntoRecylerView(List<News> newsList) {
-
-        NewsAdapter newsAdapter = new NewsAdapter(this, newsList);
-        recyclerViewNews.setLayoutManager(new LinearLayoutManager(this));
-        recyclerViewNews.setAdapter(newsAdapter);
-
-
     }
 
     @Override
@@ -184,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public boolean onQueryTextChange(String newText) {
 
-                newsAdapter.getFilter().filter(newText);
+               newsAdapter.getFilter().filter(newText);
                 return false;
             }
         });
@@ -192,6 +180,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         return super.onCreateOptionsMenu(menu);
     }
+
+
+
+
+    private void PutDataIntoRecylerView(ArrayList<News> newsList) {
+
+        NewsAdapter newsAdapter = new NewsAdapter(this, newsList);
+        recyclerViewNews.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewNews.setAdapter(newsAdapter);
+
+
+    }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
