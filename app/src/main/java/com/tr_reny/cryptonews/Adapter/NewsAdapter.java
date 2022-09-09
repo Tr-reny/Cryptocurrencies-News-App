@@ -16,6 +16,7 @@ import com.tr_reny.cryptonews.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> implements Filterable {
     private Context mContext;
@@ -52,8 +53,39 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
 
     @Override
     public Filter getFilter() {
-        return null;
+        return newsFilter;
     }
+
+    private final Filter newsFilter =  new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+
+            List<News> filteredNewsList = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0){
+                filteredNewsList.addAll(newsListFull);
+            }else
+            {
+                String filterPatten = constraint.toString().toLowerCase(Locale.ROOT).trim();
+                for (News news : newsListFull ){
+                    if ( news.title.toLowerCase(Locale.ROOT).contains(filterPatten))
+                        filteredNewsList.add(news);
+                }
+            }
+
+
+
+
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+
+        }
+    };
+
+
+
 
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
