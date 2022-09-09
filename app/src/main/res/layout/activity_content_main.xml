@@ -9,7 +9,7 @@
     tools:context=".Activity.MainActivity"
     tools:showIn="@layout/app_layout">
 
-   <!-- <RelativeLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:elevation="999dp"
@@ -40,21 +40,19 @@
             android:paddingLeft="@dimen/normalPadding"
             android:paddingRight="@dimen/normalPadding">
 
-            &lt;!&ndash;replace with recycler view&ndash;&gt;
+            <!--replace with recycler view-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"></LinearLayout>
 
--->
-  <!--          &lt;!&ndash;replace with recycler view&ndash;&gt;
+            <!--replace with recycler view-->
             <include layout="@layout/layout_featured_news" />
--->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewNews"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
- <!--       </LinearLayout>-->
+        </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

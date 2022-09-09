@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void getNews() {
-        Call<List<News>> call = mboumFinanceAPI.getMarketNews("https://mboum-finance.p.rapidapi.com", "7b17418753msh4f16608e0aa78d7p1a6fe6jsnfc06e90efe18");
+        Call<List<News>> call = mboumFinanceAPI.getMarketNews("mboum-finance.p.rapidapi.com", "7b17418753msh4f16608e0aa78d7p1a6fe6jsnfc06e90efe18");
         call.enqueue(new Callback<List<News>>() {
             @Override
             public void onResponse(Call<List<News>> call, Response<List<News>> response) {
