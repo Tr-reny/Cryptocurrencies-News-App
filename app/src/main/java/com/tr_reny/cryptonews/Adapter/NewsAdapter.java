@@ -73,13 +73,21 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
                 }
             }
 
-
-
+       FilterResults results = new FilterResults();
+            results.values = filteredNewsList;
+            results.count = filteredNewsList.size();
+            return results;
 
         }
 
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
+
+
+            newsList.clear();
+            newsList.addAll((ArrayList)results.values);
+            notifyDataSetChanged();
+
 
         }
     };
