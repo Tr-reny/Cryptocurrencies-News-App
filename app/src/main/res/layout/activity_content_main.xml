@@ -20,6 +20,7 @@
         tools:ignore="MissingConstraints">
 
         <EditText
+            android:id="@+id/ed_search"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
