@@ -40,6 +40,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="5dp"
         android:layout_toRightOf="@id/newsThumbnailImageView"
+        android:text="6 hrs ago"
         android:textColor="#8E909A"
         android:textSize="11sp" />
 
