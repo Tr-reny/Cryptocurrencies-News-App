@@ -9,7 +9,7 @@
     tools:context=".Activity.MainActivity"
     tools:showIn="@layout/app_layout">
 
-    <RelativeLayout
+   <!-- <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:elevation="999dp"
@@ -32,35 +32,29 @@
 
     </RelativeLayout>
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="?attr/actionBarSize"
-        tools:ignore="MissingConstraints">
-
-        <LinearLayout
+            <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:paddingTop="?attr/actionBarSize"
             android:paddingLeft="@dimen/normalPadding"
             android:paddingRight="@dimen/normalPadding">
 
-            <!--replace with recycler view-->
+            &lt;!&ndash;replace with recycler view&ndash;&gt;
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"></LinearLayout>
 
-
-            <!--replace with recycler view-->
+-->
+  <!--          &lt;!&ndash;replace with recycler view&ndash;&gt;
             <include layout="@layout/layout_featured_news" />
-
+-->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewNews"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+ <!--       </LinearLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -110,9 +110,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         //Retrofit
-        String url = "https://mboum-finance.p.rapidapi.com/";
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(url)
+                .baseUrl("https://mboum-finance.p.rapidapi.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
