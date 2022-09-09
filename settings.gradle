@@ -14,4 +14,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Crypto News"
 include ':app'
-include ':retrofit'
