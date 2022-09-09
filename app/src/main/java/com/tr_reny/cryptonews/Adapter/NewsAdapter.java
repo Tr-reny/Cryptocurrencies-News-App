@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,15 +14,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.tr_reny.cryptonews.Model.News;
 import com.tr_reny.cryptonews.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> {
+public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> implements Filterable {
     private Context mContext;
     private List<News> newsList;
+    private List<News> newsListFull;
 
     public NewsAdapter(Context mContext, List<News> newsList) {
         this.mContext = mContext;
-        this.newsList = newsList;
+        this.newsListFull = newsList;
+        this.newsList = new ArrayList<>(newsListFull);
     }
 
     @NonNull
@@ -43,6 +48,11 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
     @Override
     public int getItemCount() {
         return newsList.size();
+    }
+
+    @Override
+    public Filter getFilter() {
+        return null;
     }
 
 
