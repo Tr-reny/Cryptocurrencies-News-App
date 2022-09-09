@@ -22,7 +22,8 @@
             android:title="Tools" />
     </group>
 
-    <item android:title="Only Toggle Theme would work">
+    <item
+        android:title="Only Toggle Theme would work">
         <menu>
             <item
                 android:id="@+id/nav_share"
