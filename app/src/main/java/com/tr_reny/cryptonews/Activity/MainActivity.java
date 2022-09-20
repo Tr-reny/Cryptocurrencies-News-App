@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             switch (item.getItemId()) {
                 case R.id.navigationMyProfile:
                     return true;
-                case R.id.navigationMyCourses:
+                case R.id.navigationMarket:
                     return true;
                 case R.id.navigationHome:
                     return true;
