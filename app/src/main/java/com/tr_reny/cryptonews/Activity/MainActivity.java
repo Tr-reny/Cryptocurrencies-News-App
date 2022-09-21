@@ -1,5 +1,11 @@
 package com.tr_reny.cryptonews.Activity;
 
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.SearchView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,15 +17,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.nfc.Tag;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.EditText;
-import android.widget.SearchView;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -172,7 +169,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public boolean onQueryTextChange(String newText) {
 
-               newsAdapter.getFilter().filter(newText);
+                newsAdapter.getFilter().filter(newText);
                 return false;
             }
         });
@@ -180,8 +177,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         return super.onCreateOptionsMenu(menu);
     }
-
-
 
 
     private void PutDataIntoRecylerView(ArrayList<News> newsList) {
