@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,15 +14,57 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.tr_reny.cryptonews.Model.News;
 import com.tr_reny.cryptonews.R;
 
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Locale;
 
-public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> {
+public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> implements Filterable {
     private Context mContext;
-    private List<News> newsList;
 
-    public NewsAdapter(Context mContext, List<News> newsList) {
+    private ArrayList<News> newsArrayList;
+    private ArrayList<News> newsArrayListFull;
+    // Filter the Containers
+    private final Filter titleFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+
+            ArrayList<News> filteredTitle = new ArrayList<>();
+            if (constraint == null || constraint.length() == 0) {
+                filteredTitle.addAll(newsArrayListFull);
+            } else {
+                String filterPatten = constraint.toString().toLowerCase().trim();
+
+                for (News news : newsArrayListFull) {
+
+                    if (news.getTitle().toLowerCase(Locale.ROOT).contains(filterPatten))
+                        filteredTitle.add(news);
+
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredTitle;
+            results.count = filteredTitle.size();
+
+            return results;
+
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+
+
+            newsArrayList.clear();
+            newsArrayList.addAll((ArrayList) results.values);
+            notifyDataSetChanged();
+
+
+        }
+    };
+
+    public NewsAdapter(Context mContext, ArrayList<News> newsArrayList) {
         this.mContext = mContext;
-        this.newsList = newsList;
+        this.newsArrayListFull = newsArrayList;
+        this.newsArrayList = new ArrayList<>(newsArrayListFull);
     }
 
     @NonNull
@@ -34,17 +78,21 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.title.setText(newsList.get(position).getTitle());
-        holder.guid.setText(newsList.get(position).getGuid());
-        holder.pubDate.setText(newsList.get(position).getPubDate());
+        holder.title.setText(newsArrayList.get(position).getTitle());
+        holder.guid.setText(newsArrayList.get(position).getGuid());
+        holder.pubDate.setText(newsArrayList.get(position).getPubDate());
 
     }
 
     @Override
     public int getItemCount() {
-        return newsList.size();
+        return newsArrayList.size();
     }
 
+    @Override
+    public Filter getFilter() {
+        return titleFilter;
+    }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView title, pubDate, guid;

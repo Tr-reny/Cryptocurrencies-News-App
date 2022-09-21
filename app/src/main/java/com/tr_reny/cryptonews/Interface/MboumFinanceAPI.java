@@ -1,13 +1,12 @@
 package com.tr_reny.cryptonews.Interface;
 
 import com.tr_reny.cryptonews.Model.News;
+
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
-import retrofit2.http.Headers;
-import retrofit2.http.Query;
 
 public interface MboumFinanceAPI {
     //.url("https://mboum-finance.p.rapidapi.com/ne/news")

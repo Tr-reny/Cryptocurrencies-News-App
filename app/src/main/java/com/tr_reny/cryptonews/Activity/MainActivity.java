@@ -1,5 +1,11 @@
 package com.tr_reny.cryptonews.Activity;
 
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.SearchView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,12 +17,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.nfc.Tag;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -44,8 +44,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private BottomNavigationView bottomNavigationView;
 
     private MboumFinanceAPI mboumFinanceAPI;
-    private List<News> newsList;
+    private ArrayList<News> arrayListNews;
     private RecyclerView recyclerViewNews;
+    private NewsAdapter newsAdapter;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             switch (item.getItemId()) {
                 case R.id.navigationMyProfile:
                     return true;
-                case R.id.navigationMyCourses:
+                case R.id.navigationMarket:
                     return true;
                 case R.id.navigationHome:
                     return true;
@@ -105,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         bottomNavigationView.setSelectedItemId(R.id.navigationHome);
 
 
-        newsList = new ArrayList<>();
+        arrayListNews = new ArrayList<>();
         recyclerViewNews = findViewById(R.id.recyclerViewNews);
 
 
@@ -133,10 +134,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 List<News> newsList1 = response.body();
                 for (News news : newsList1) {
 
-                    newsList.add(news);
+                    arrayListNews.add(news);
                 }
 
-                PutDataIntoRecylerView(newsList);
+                PutDataIntoRecylerView(arrayListNews);
 
             }
 
@@ -149,8 +150,36 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(@NonNull Menu menu) {
 
-    private void PutDataIntoRecylerView(List<News> newsList) {
+        getMenuInflater().inflate(R.menu.search_bar, menu);
+        MenuItem menuItem = menu.findItem(R.id.menu_search);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+
+        searchView.setMaxWidth(Integer.MAX_VALUE);
+        searchView.setQueryHint("Search Here!");
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                newsAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    private void PutDataIntoRecylerView(ArrayList<News> newsList) {
 
         NewsAdapter newsAdapter = new NewsAdapter(this, newsList);
         recyclerViewNews.setLayoutManager(new LinearLayoutManager(this));
@@ -158,7 +187,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     }
-
 
     @Override
     public void onBackPressed() {

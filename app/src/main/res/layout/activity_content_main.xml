@@ -20,6 +20,7 @@
         tools:ignore="MissingConstraints">
 
         <EditText
+            android:id="@+id/ed_search"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
@@ -38,7 +39,7 @@
         android:paddingTop="?attr/actionBarSize"
         tools:ignore="MissingConstraints">
 
-            <LinearLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -55,7 +56,9 @@
 
             <!--replace with recycler view-->
             <include layout="@layout/layout_featured_news" />
+
             <androidx.recyclerview.widget.RecyclerView
+                tools:listitem="@layout/layout_news"
                 android:id="@+id/recyclerViewNews"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
