@@ -21,7 +21,6 @@ public class News {
 
 
     //Getters
-
     public String getTitle() {
         return title;
     }

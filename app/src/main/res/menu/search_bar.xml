@@ -4,9 +4,8 @@
 
     <item
         android:id="@+id/menu_search"
-
         android:icon="@android:drawable/ic_menu_search"
         android:title="Search"
         appcompat:actionViewClass="android.widget.SearchView"
-        appcompat:showAsAction="always" />
+        appcompat:showAsAction="ifRoom|collapseActionView" />
 </menu>

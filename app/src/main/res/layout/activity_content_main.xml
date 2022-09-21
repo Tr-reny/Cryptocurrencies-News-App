@@ -58,6 +58,7 @@
             <include layout="@layout/layout_featured_news" />
 
             <androidx.recyclerview.widget.RecyclerView
+                tools:listitem="@layout/layout_news"
                 android:id="@+id/recyclerViewNews"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
