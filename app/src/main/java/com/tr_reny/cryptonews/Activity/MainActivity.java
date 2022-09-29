@@ -1,6 +1,9 @@
 package com.tr_reny.cryptonews.Activity;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.SearchView;
@@ -23,11 +26,13 @@ import com.google.android.material.navigation.NavigationView;
 import com.tr_reny.cryptonews.Adapter.NewsAdapter;
 import com.tr_reny.cryptonews.BottomNavigationBehavior;
 import com.tr_reny.cryptonews.DarkModePrefManager;
-import com.tr_reny.cryptonews.Interface.MboumFinanceAPI;
+import com.tr_reny.cryptonews.Interface.CryptocompareAPI;
+import com.tr_reny.cryptonews.Model.Data;
 import com.tr_reny.cryptonews.Model.News;
 import com.tr_reny.cryptonews.R;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import retrofit2.Call;
@@ -43,8 +48,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
      */
     private BottomNavigationView bottomNavigationView;
 
-    private MboumFinanceAPI mboumFinanceAPI;
-    private ArrayList<News> arrayListNews;
+    private CryptocompareAPI cryptocompareAPI;
+    private ArrayList<Data> dataList;
     private RecyclerView recyclerViewNews;
     private NewsAdapter newsAdapter;
 
@@ -106,51 +111,64 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         bottomNavigationView.setSelectedItemId(R.id.navigationHome);
 
 
-        arrayListNews = new ArrayList<>();
+        dataList = new ArrayList<>();
         recyclerViewNews = findViewById(R.id.recyclerViewNews);
-
 
         //Retrofit
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://mboum-finance.p.rapidapi.com/")
+                .baseUrl("https://min-api.cryptocompare.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+        cryptocompareAPI = retrofit.create(CryptocompareAPI.class);
 
-        mboumFinanceAPI = retrofit.create(MboumFinanceAPI.class);
         getNews();
 
 
     }
 
     private void getNews() {
-        Call<List<News>> call = mboumFinanceAPI.getMarketNews("mboum-finance.p.rapidapi.com", "7b17418753msh4f16608e0aa78d7p1a6fe6jsnfc06e90efe18");
-        call.enqueue(new Callback<List<News>>() {
+        Call<News> call = cryptocompareAPI.getNews("6b438844ac5cc35f50b52a7d4ee12a897d8b9537ea6141bcb888c1f4b5f8ff46");
+        call.enqueue(new Callback<News>() {
             @Override
-            public void onResponse(Call<List<News>> call, Response<List<News>> response) {
-                if (!response.isSuccessful()) {
-                    Toast.makeText(MainActivity.this, "Code: " + response.code(), Toast.LENGTH_LONG);
-                    return;
+            public void onResponse(Call<News> call, Response<News> response) {
+
+                if (response.isSuccessful()) {
+
+                    Log.d(TAG, "body to string: " + response.body().getMessage());
+
+                    News news = response.body();
+
+                    ArrayList<Data> datas = new ArrayList<Data>(Arrays.asList(response.body().getData()));
+
+                    Log.d(TAG + " getNews ", " onResponse: Type: " + news.getType() + "  message: " + news.getMessage());
+
+
+                    for (Data datal : datas) {
+                        Log.d(TAG, datal.toString());
+
+                        dataList.add(datal);
+
+                    }
+                    PutDataIntoRecylerView(dataList);
+
+                } else {
+                    Log.d(TAG + " getNews", " onResponse " + "Error Code " + response.code());
                 }
-                List<News> newsList1 = response.body();
-                for (News news : newsList1) {
-
-                    arrayListNews.add(news);
-                }
-
-                PutDataIntoRecylerView(arrayListNews);
-
             }
 
 
             @Override
-            public void onFailure(Call<List<News>> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_LONG).show();
+            public void onFailure(Call<News> call, Throwable t) {
                 t.printStackTrace();
+                Log.d(TAG + " getNews ", " onFailure " + " Didn't work " + t.getMessage() + " " + t.getCause() + " \n" + Arrays.toString(t.getStackTrace()));
+
+
             }
         });
+
     }
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(@NonNull Menu menu) {
 
         getMenuInflater().inflate(R.menu.search_bar, menu);
@@ -177,11 +195,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         return super.onCreateOptionsMenu(menu);
     }
+*/
 
+    private void PutDataIntoRecylerView(ArrayList<Data> dataList) {
 
-    private void PutDataIntoRecylerView(ArrayList<News> newsList) {
-
-        NewsAdapter newsAdapter = new NewsAdapter(this, newsList);
+        NewsAdapter newsAdapter = new NewsAdapter(this, dataList);
         recyclerViewNews.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewNews.setAdapter(newsAdapter);
 

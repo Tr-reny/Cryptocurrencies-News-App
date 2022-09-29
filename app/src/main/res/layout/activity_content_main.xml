@@ -9,7 +9,7 @@
     tools:context=".Activity.MainActivity"
     tools:showIn="@layout/app_layout">
 
-    <RelativeLayout
+    <!--<RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:elevation="999dp"
@@ -31,12 +31,11 @@
             android:textStyle="bold" />
 
 
-    </RelativeLayout>
+    </RelativeLayout>-->
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="?attr/actionBarSize"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
@@ -58,10 +57,10 @@
             <include layout="@layout/layout_featured_news" />
 
             <androidx.recyclerview.widget.RecyclerView
-                tools:listitem="@layout/layout_news"
                 android:id="@+id/recyclerViewNews"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                tools:listitem="@layout/layout_news" />
 
         </LinearLayout>
 
