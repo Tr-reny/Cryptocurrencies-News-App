@@ -14,9 +14,4 @@ public interface CryptocompareAPI {
     Call<News> getNewsRealtime(
             @Header("Apikey") String apiKey);
 
-
-    //    https://api.jsonserve.com/HCiQ5c
-    @GET("data/v2/news/?categories=BTC,ETH&excludeCategories=Sponsored")
-    Call<News> getNews();
-
 }

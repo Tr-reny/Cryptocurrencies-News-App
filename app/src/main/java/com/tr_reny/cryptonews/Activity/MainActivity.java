@@ -24,6 +24,7 @@ import com.tr_reny.cryptonews.Adapter.NewsAdapter;
 import com.tr_reny.cryptonews.BottomNavigationBehavior;
 import com.tr_reny.cryptonews.DarkModePrefManager;
 import com.tr_reny.cryptonews.Interface.CryptocompareAPI;
+import com.tr_reny.cryptonews.Model.Data;
 import com.tr_reny.cryptonews.Model.News;
 import com.tr_reny.cryptonews.R;
 
@@ -179,9 +180,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-    private void PutDataIntoRecylerView(ArrayList<News> newsList) {
+    private void PutDataIntoRecylerView(ArrayList<Data> dataList) {
 
-        NewsAdapter newsAdapter = new NewsAdapter(this, newsList);
+        NewsAdapter newsAdapter = new NewsAdapter(this, dataList);
         recyclerViewNews.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewNews.setAdapter(newsAdapter);
 
