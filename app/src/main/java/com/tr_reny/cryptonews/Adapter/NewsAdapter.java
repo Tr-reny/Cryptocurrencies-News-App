@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -38,6 +39,13 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
         holder.title.setText(dataList.get(position).getTitle());
+        holder.body.setText(dataList.get(position).getBody());
+
+        //Glide Library to display the images
+
+        Glide.with(mContext)
+                .load(dataList.get(position).getImageurl())
+                .into(holder.imageViewUrl);
 
 
     }
@@ -49,15 +57,17 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView title;
-        // TextView body;
+        TextView title, body;
+        ImageView imageViewUrl;
+
 
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             title = itemView.findViewById(R.id.newsTitleTextView);
-            //body= itemView.findViewById(R.id.text_view_source);
+            body= itemView.findViewById(R.id.newsDetailTextView);
+            imageViewUrl = itemView.findViewById(R.id.newsThumbnailImageView);
 
         }
     }
