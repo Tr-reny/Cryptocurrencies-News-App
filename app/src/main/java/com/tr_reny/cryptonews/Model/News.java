@@ -1,43 +1,57 @@
 package com.tr_reny.cryptonews.Model;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 public class News {
 
-    @SerializedName("title")
-    public String title;
+    @SerializedName("Type")
+    @Expose
+    public Integer type;
+    @SerializedName("Message")
+    @Expose
+    public String message;
+    @SerializedName("Promoted")
+    @Expose
+    public List<Object> promoted = null;
+    @SerializedName("RateLimit")
+    @Expose
+    public RateLimit rateLimit;
+    @SerializedName("HasWarning")
+    @Expose
+    public Boolean hasWarning;
+    @SerializedName("Data")
+    @Expose
+    private Data[] data = null;
 
-    @SerializedName("link")
-    public String link;
-
-    @SerializedName("putDate")
-    public String pubDate;
-
-    @SerializedName("source")
-    public String source;
-
-    @SerializedName("guid")
-    public String guid;
+    //Constructor
 
 
-    //Getters
-    public String getTitle() {
-        return title;
+    //Getters and Setters
+
+    public Integer getType() {
+        return type;
     }
 
-    public String getLink() {
-        return link;
+    public String getMessage() {
+        return message;
     }
 
-    public String getPubDate() {
-        return pubDate;
+    public List<Object> getPromoted() {
+        return promoted;
     }
 
-    public String getSource() {
-        return source;
+    public Data[] getData() {
+        return data;
     }
 
-    public String getGuid() {
-        return guid;
+    public RateLimit getRateLimit() {
+        return rateLimit;
+    }
+
+    public Boolean getHasWarning() {
+        return hasWarning;
     }
 }

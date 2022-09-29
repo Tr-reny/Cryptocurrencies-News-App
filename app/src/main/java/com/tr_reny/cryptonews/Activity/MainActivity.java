@@ -23,7 +23,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.tr_reny.cryptonews.Adapter.NewsAdapter;
 import com.tr_reny.cryptonews.BottomNavigationBehavior;
 import com.tr_reny.cryptonews.DarkModePrefManager;
-import com.tr_reny.cryptonews.Interface.MboumFinanceAPI;
+import com.tr_reny.cryptonews.Interface.CryptocompareAPI;
 import com.tr_reny.cryptonews.Model.News;
 import com.tr_reny.cryptonews.R;
 
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
      */
     private BottomNavigationView bottomNavigationView;
 
-    private MboumFinanceAPI mboumFinanceAPI;
+    private CryptocompareAPI mboumFinanceAPI;
     private ArrayList<News> arrayListNews;
     private RecyclerView recyclerViewNews;
     private NewsAdapter newsAdapter;
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        mboumFinanceAPI = retrofit.create(MboumFinanceAPI.class);
+        mboumFinanceAPI = retrofit.create(CryptocompareAPI.class);
         getNews();
 
 
