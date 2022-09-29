@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.tr_reny.cryptonews.Model.Data;
 import com.tr_reny.cryptonews.R;
 
