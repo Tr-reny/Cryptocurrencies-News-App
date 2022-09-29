@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .baseUrl("https://min-api.cryptocompare.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-       cryptocompareAPI  = retrofit.create(CryptocompareAPI.class);
+        cryptocompareAPI = retrofit.create(CryptocompareAPI.class);
 
         getNews();
 
