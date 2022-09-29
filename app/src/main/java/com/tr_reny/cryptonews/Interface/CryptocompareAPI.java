@@ -11,7 +11,7 @@ import retrofit2.http.Header;
 public interface CryptocompareAPI {
 
     @GET("data/v2/news/?lang=EN")
-    Call<News> getNewsRealtime(
+    Call<News> getNews(
             @Header("Apikey") String apiKey);
 
 }
