@@ -1,12 +1,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="110dp"
     android:layout_marginTop="16dp">
 
     <ImageView
         android:id="@+id/newsThumbnailImageView"
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="110dp"
         android:scaleType="centerCrop"
         android:src="@drawable/news" />
 
@@ -29,7 +29,7 @@
         android:layout_marginTop="5dp"
         android:layout_toRightOf="@id/newsThumbnailImageView"
         android:ellipsize="end"
-        android:maxLines="2"
+        android:maxLines="3"
         android:text="The Bitcoin (BTC) network’s hashrate – or computing power that goes into mining new coins – could reach 327 EH/s by the end of the year, a research note from the crypto-focused financial services firm BitOoda has predicted, after the firm cut an earlier forecast for the year."
         android:textColor="@color/featuredNewsContentColor" />
 
@@ -39,6 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="5dp"
+        android:layout_below="@id/newsDetailTextView"
         android:layout_toRightOf="@id/newsThumbnailImageView"
         android:text="6 hrs ago"
         android:textColor="#8E909A"

@@ -56,12 +56,17 @@
             <!--replace with recycler view-->
             <include layout="@layout/layout_featured_news" />
 
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewNews"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:listitem="@layout/layout_news" />
 
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

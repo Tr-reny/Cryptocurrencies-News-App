@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.Toast;
 
@@ -52,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ArrayList<Data> dataList;
     private RecyclerView recyclerViewNews;
     private NewsAdapter newsAdapter;
+
+    private ProgressBar progressBar;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -113,6 +117,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         dataList = new ArrayList<>();
         recyclerViewNews = findViewById(R.id.recyclerViewNews);
+        progressBar = findViewById(R.id.progressbar);
 
         //Retrofit
         Retrofit retrofit = new Retrofit.Builder()
@@ -133,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onResponse(Call<News> call, Response<News> response) {
 
                 if (response.isSuccessful()) {
-
+                    progressBar.setVisibility(View.GONE);
                     Log.d(TAG, "body to string: " + response.body().getMessage());
 
                     News news = response.body();
