@@ -204,7 +204,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         newsAdapter = new NewsAdapter(this, dataList);
         recyclerViewNews.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewNews.setAdapter(newsAdapter);
-        Log.d(TAG, "Data Placed on RecyclerView: " + dataList);
 
 
     }
