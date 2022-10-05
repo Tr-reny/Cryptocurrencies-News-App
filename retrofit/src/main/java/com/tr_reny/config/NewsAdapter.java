@@ -43,7 +43,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
 
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView title,guid;
+        TextView title, guid;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);

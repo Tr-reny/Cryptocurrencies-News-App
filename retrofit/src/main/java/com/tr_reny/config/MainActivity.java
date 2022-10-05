@@ -16,9 +16,9 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
+    MboumFinanceAPI mboumFinanceAPI;
     private RecyclerView recyclerView;
     private List<News> newsList;
-    MboumFinanceAPI mboumFinanceAPI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,17 +34,17 @@ public class MainActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        mboumFinanceAPI= retrofit.create(MboumFinanceAPI.class);
+        mboumFinanceAPI = retrofit.create(MboumFinanceAPI.class);
         getNews();
 
     }
 
-    private void getNews(){
+    private void getNews() {
         Call<List<News>> call = mboumFinanceAPI.getMarketNews("mboum-finance.p.rapidapi.com", "7b17418753msh4f16608e0aa78d7p1a6fe6jsnfc06e90efe18");
         call.enqueue(new Callback<List<News>>() {
             @Override
             public void onResponse(Call<List<News>> call, Response<List<News>> response) {
-                if (!response.isSuccessful()){
+                if (!response.isSuccessful()) {
 
                     return;
                 }

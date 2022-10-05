@@ -62,12 +62,11 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
         ImageView imageViewUrl;
 
 
-
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             title = itemView.findViewById(R.id.newsTitleTextView);
-            body= itemView.findViewById(R.id.newsDetailTextView);
+            body = itemView.findViewById(R.id.newsDetailTextView);
             imageViewUrl = itemView.findViewById(R.id.newsThumbnailImageView);
 
         }
