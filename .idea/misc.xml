@@ -14,6 +14,7 @@
         <entry key="app/src/main/res/drawable/ic_menu_manage.xml" value="0.118" />
         <entry key="app/src/main/res/drawable/ic_user.xml" value="0.118" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.118" />
+        <entry key="app/src/main/res/layout/activity_about.xml" value="0.1859375" />
         <entry key="app/src/main/res/layout/activity_content_main.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_search.xml" value="0.18489583333333334" />

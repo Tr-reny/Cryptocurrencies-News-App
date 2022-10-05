@@ -2,14 +2,12 @@ package com.tr_reny.cryptonews.Activity;
 
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.SearchView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -35,7 +33,6 @@ import com.tr_reny.cryptonews.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -46,7 +43,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     /**
      * Created by Tr_reny (Reny Kipkoech) on 4th Sep 2022
-     * This is a Crypto News App that Gets Information from Crypto News API
+     * This is a Crypto News App that Gets Information from Cryptocompare News API
      */
     private BottomNavigationView bottomNavigationView;
 
@@ -204,9 +201,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void PutDataIntoRecylerView(ArrayList<Data> dataList) {
 
-        NewsAdapter newsAdapter = new NewsAdapter(this, dataList);
+        newsAdapter = new NewsAdapter(this, dataList);
         recyclerViewNews.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewNews.setAdapter(newsAdapter);
+        Log.d(TAG, "Data Placed on RecyclerView: " + dataList);
 
 
     }
@@ -236,7 +234,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         } else if (id == R.id.nav_manage) {
 
+        } else if (id == R.id.nav_about) {
+            //Open Activity About
+            Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+            startActivity(intent);
+            Log.d(TAG, "Open Activity About: " + intent);
+
         } else if (id == R.id.nav_share) {
+            shareIt();
 
         } else if (id == R.id.nav_dark_mode) {
             //code for setting dark mode
@@ -245,6 +250,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             darkModePrefManager.setDarkMode(!darkModePrefManager.isNightMode());
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             recreate();
+            Log.d(TAG, "Dark Mode Manager Preference : " + darkModePrefManager);
+
 
         }
 
@@ -252,6 +259,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    private void shareIt() {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_SEND);
+        intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Crypto News APP");
+        intent.putExtra(Intent.EXTRA_TEXT, "Download this Crypto News and always get updated on Crypto News on this link \n--> https://bit.ly/3MnRCaB ");
+        intent.setType("text/plain");
+        startActivity(intent);
+        Log.d(TAG, "Shear This App: " + intent);
+    }
+
 }
 
 
