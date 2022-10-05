@@ -53,10 +53,16 @@ Cryptocurrencies-News-App
 
 ## Screenshoot
 
-![Screenshot_20220905-115246](https://user-images.githubusercontent.com/57016982/188411532-98659423-3dc2-457b-85b5-30fdd082d183.png)
-![Screenshot_20220905-115255](https://user-images.githubusercontent.com/57016982/188411585-3400ac5f-f11d-43ff-bff4-ff192c0db22c.png)
-![Screenshot_20220905-115329](https://user-images.githubusercontent.com/57016982/188411664-8a91b2f2-2644-456f-8065-7bef04e0e3a8.png)
-![Screenshot_20220905-115304](https://user-images.githubusercontent.com/57016982/188411650-f09d8879-93ec-4abe-a9c1-5d71e6fca686.png)
+![Screenshot_20221005-111042](https://user-images.githubusercontent.com/57016982/194015719-baf3add0-5660-4039-a8d6-a500543e765e.png)
+
+![Screenshot_20221005-111049](https://user-images.githubusercontent.com/57016982/194015740-4fe05d00-858f-4591-a83f-2c351ecc8c9b.png)
+
+![Screenshot_20221005-111500](https://user-images.githubusercontent.com/57016982/194015774-500ae4ae-aea2-41e2-9a60-6a3274dd62bd.png)
+
+![Screenshot_20221005-111504](https://user-images.githubusercontent.com/57016982/194015819-d9bc0c76-f008-4495-84d3-f46e66906a02.png)
+
+![Screenshot_20221005-111104](https://user-images.githubusercontent.com/57016982/194015853-2c4efb60-301b-4edc-aca6-b2b1b395e8cd.png)
+
 </p>
 
 ## Contributors :
