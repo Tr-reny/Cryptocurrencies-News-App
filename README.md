@@ -50,6 +50,11 @@ Cryptocurrencies-News-App
 * Featured News
 * News Layout
 *
+## DEMO APP :
+CLick this --->
+<a href="https://drive.google.com/file/d/1OZsANrt97BtVr5btxXWiI66px-x42VVi/view?usp=sharing">GOODLE DRIVE LINK
+  </a>
+<---to download Demo app
 
 ## Screenshoot
 
