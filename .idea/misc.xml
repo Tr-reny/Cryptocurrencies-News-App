@@ -10,8 +10,10 @@
         <entry key="app/src/main/res/drawable-v24/side_nav_bar.xml" value="0.118" />
         <entry key="app/src/main/res/drawable/ic_edittext_bg.xml" value="0.118" />
         <entry key="app/src/main/res/drawable/ic_effort.xml" value="0.118" />
+        <entry key="app/src/main/res/drawable/ic_home.xml" value="0.1165" />
         <entry key="app/src/main/res/drawable/ic_menu_gallery.xml" value="0.117" />
         <entry key="app/src/main/res/drawable/ic_menu_manage.xml" value="0.118" />
+        <entry key="app/src/main/res/drawable/ic_menu_share.xml" value="0.1165" />
         <entry key="app/src/main/res/drawable/ic_user.xml" value="0.118" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.118" />
         <entry key="app/src/main/res/layout/about_dev.xml" value="0.18489583333333334" />
