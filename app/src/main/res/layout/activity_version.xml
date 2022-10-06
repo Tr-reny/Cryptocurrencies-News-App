@@ -62,14 +62,15 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="150dp"
+                    android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:drawableLeft="@drawable/ic_action_rate"
+                    android:gravity="center_vertical"
                     android:drawablePadding="6dp"
                     android:text="Rate this app 5 stars" />
 
                 <TextView
-                    android:layout_width="150dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginStart="30dp"
                     android:drawableLeft="@drawable/ic_menu_share"
@@ -83,11 +84,11 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="12dp"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="150dp"
+                    android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:drawableLeft="@drawable/ic_action_about"
                     android:drawablePadding="6dp"
@@ -95,7 +96,7 @@
                     android:text=" Help" />
 
                 <TextView
-                    android:layout_width="150dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginStart="30dp"
                     android:drawableLeft="@drawable/ic_user"
@@ -110,11 +111,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="12dp"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="150dp"
+                    android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:drawableLeft="@drawable/ic_action_feedback"
                     android:drawablePadding="6dp"
