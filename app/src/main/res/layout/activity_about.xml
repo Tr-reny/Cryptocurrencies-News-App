@@ -35,9 +35,7 @@
 
             <TextView
                 style="@style/viewParent.headerText"
-                android:layout_width="wrap_content"
                 android:layout_gravity="center"
-                android:layout_hreight="wrap_content"
                 android:text="Reny Kipkoech"
                 android:textStyle="bold" />
 
