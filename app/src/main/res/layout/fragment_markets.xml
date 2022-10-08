@@ -5,8 +5,8 @@
     android:id="@+id/markets_swipe_refresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/contentBodyColor"
-    android:layout_gravity="center|bottom">
+    android:layout_gravity="center|bottom"
+    android:background="@color/contentBodyColor">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -71,11 +71,11 @@
             android:layout_height="match_parent"
             android:layout_marginTop="38dp"
             android:scrollbars="vertical"
-            tools:listitem="@layout/row_market_list"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/top_pairs_spinner">
+            app:layout_constraintTop_toBottomOf="@+id/top_pairs_spinner"
+            tools:listitem="@layout/row_market_list">
 
         </androidx.recyclerview.widget.RecyclerView>
 

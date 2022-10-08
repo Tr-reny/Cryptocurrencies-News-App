@@ -1,8 +1,8 @@
 package com.tr_reny.cryptonews.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.tr_reny.cryptonews.R;
 
