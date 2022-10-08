@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/markets_swipe_refresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/contentBodyColor"
     android:layout_gravity="center|bottom">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,7 +21,7 @@
             android:background="@drawable/button_ripple_effect"
             android:enabled="false"
             android:text="SOURCE"
-            android:textColor="@color/bottomNavigationTintColor"
+            android:textColor="@color/contentTextColor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -70,6 +71,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="38dp"
             android:scrollbars="vertical"
+            tools:listitem="@layout/row_market_list"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
