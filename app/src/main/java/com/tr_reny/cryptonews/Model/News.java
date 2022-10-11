@@ -26,10 +26,8 @@ public class News {
     @Expose
     private Data[] data = null;
 
-    //Constructor
 
-
-    //Getters and Setters
+    //Getters
 
     public Integer getType() {
         return type;

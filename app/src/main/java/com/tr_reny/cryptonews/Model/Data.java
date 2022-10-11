@@ -48,13 +48,7 @@ public class Data {
     @Expose
     public SourceInfo sourceInfo;
 
-
-//constructor
-
-
-    //Getters and Setters
-
-
+    //Getters
     public String getId() {
         return id;
     }
