@@ -74,8 +74,7 @@
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/top_pairs_spinner"
-            tools:listitem="@layout/row_market_list">
+            app:layout_constraintTop_toBottomOf="@+id/top_pairs_spinner">
 
         </androidx.recyclerview.widget.RecyclerView>
 

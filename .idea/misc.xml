@@ -18,7 +18,7 @@
         <entry key="app/src/main/res/drawable/ic_user.xml" value="0.118" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.118" />
         <entry key="app/src/main/res/layout/about_dev.xml" value="0.18489583333333334" />
-        <entry key="app/src/main/res/layout/activity_about.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_about.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_content_main.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_search.xml" value="0.18489583333333334" />
@@ -32,7 +32,7 @@
         <entry key="app/src/main/res/layout/layout_featured_news.xml" value="0.25" />
         <entry key="app/src/main/res/layout/layout_news.xml" value="0.33" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.1859375" />
-        <entry key="app/src/main/res/layout/row_market_list.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/row_market_list.xml" value="0.33" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.25" />
         <entry key="app/src/main/res/menu/master_bottom_navigation.xml" value="0.1859375" />
         <entry key="app/src/main/res/menu/search_bar.xml" value="0.2" />
