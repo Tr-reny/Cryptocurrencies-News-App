@@ -15,20 +15,17 @@ import com.bumptech.glide.Glide;
 import com.tr_reny.cryptonews.Model.Data;
 import com.tr_reny.cryptonews.R;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 
 public class NewsAdapter extends
         RecyclerView.Adapter<NewsAdapter.MyViewHolder> {
 
-    private Context mContext;
-    private ArrayList<Data> dataList;
-
     private static final int LOADING = 0;
     private static final int ITEM = 1;
+    private Context mContext;
+    private ArrayList<Data> dataList;
     private boolean isLoadingAdded = false;
 
 
