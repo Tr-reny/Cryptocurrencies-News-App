@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private NewsAdapter newsAdapter;
 
     private ProgressBar progressBar;
+    private RelativeLayout relativeLayout;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -115,6 +117,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         dataList = new ArrayList<>();
         recyclerViewNews = findViewById(R.id.recyclerViewNews);
         progressBar = findViewById(R.id.progressbar);
+        relativeLayout = findViewById(R.id.rl_featuredNews);
 
         //Retrofit
         Retrofit retrofit = new Retrofit.Builder()
@@ -136,6 +139,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 if (response.isSuccessful()) {
                     progressBar.setVisibility(View.GONE);
+                    relativeLayout.setVisibility(View.VISIBLE);
                     Log.d(TAG, "body to string: " + response.body().getMessage());
 
                     News news = response.body();
