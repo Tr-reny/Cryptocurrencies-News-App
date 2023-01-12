@@ -19,8 +19,10 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import com.github.curioustechizen.ago.RelativeTimeTextView;
 
-public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> {
+public class NewsAdapter extends
+        RecyclerView.Adapter<NewsAdapter.MyViewHolder> {
 
     private Context mContext;
     private ArrayList<Data> dataList;
@@ -64,7 +66,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm a");
         String timestamp = sdf.format(date);
         holder.timestamp.setText(timestamp);
-
 
 
     }
@@ -114,6 +115,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
 
         TextView title, body , timestamp;
         ImageView imageViewUrl;
+
 
 
         public MyViewHolder(@NonNull View itemView) {
