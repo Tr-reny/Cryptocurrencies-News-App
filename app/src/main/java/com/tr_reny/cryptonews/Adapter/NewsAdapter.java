@@ -1,6 +1,7 @@
 package com.tr_reny.cryptonews.Adapter;
 
 import android.content.Context;
+import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,23 +60,10 @@ public class NewsAdapter extends
                 .load(dataList.get(position).getImageurl())
                 .into(holder.imageViewUrl);
 
-        //time stamp
-        long timeInMilliseconds = dataList.get(position).getPublishedOn() * 1000L;
-        Date date = new Date(timeInMilliseconds);
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm a");
-        String timestamp = sdf.format(date);
-        holder.timestamp.setText(timestamp);
 
-        //ToDo
-        /**
-         * Suggetion to To display the timestamp in the format of "1 hour ago" or "1 min ago",
-         * you can use a library like com.github.curioustechizen.ago:library to handle the calculations
-         * and formatting for you.
-         *
-         **/
-        // long timeInMilliseconds = dataList.get(position).getPublished_on() * 1000L;
-        //RelativeTimeTextView timestampView = holder.itemView.findViewById(R.id.timestamp);
-        //timestampView.setReferenceTime(timeInMilliseconds);
+        long timeInMilliseconds = dataList.get(position).getPublishedOn() * 1000L;
+        CharSequence timestamp = DateUtils.getRelativeTimeSpanString(timeInMilliseconds, System.currentTimeMillis(), DateUtils.SECOND_IN_MILLIS);
+        holder.timestamp.setText(timestamp);
 
 
     }
@@ -128,12 +116,7 @@ public class NewsAdapter extends
         ImageView imageViewUrl;
 
 
-        /**
-         * Suggetion to To display the timestamp in the format of "1 hour ago" or "1 min ago",
-         * you can use a library like com.github.curioustechizen.ago:library to handle the calculations
-         * and formatting for you.
-         **/
-        //RelativeTimeTextView timestamp;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
