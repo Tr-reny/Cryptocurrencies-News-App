@@ -18,6 +18,10 @@ import com.tr_reny.cryptonews.R;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * NewsAdapter is the adapter class for displaying the news data on a RecyclerView.
+ * It binds the data from the JSON file to the view holder and displays it on the RecyclerView
+ */
 
 public class NewsAdapter extends
         RecyclerView.Adapter<NewsAdapter.MyViewHolder> {
@@ -57,7 +61,7 @@ public class NewsAdapter extends
                 .load(dataList.get(position).getImageurl())
                 .into(holder.imageViewUrl);
 
-
+//Convert timestamp from JSON to human-readable format
         long timeInMilliseconds = dataList.get(position).getPublishedOn() * 1000L;
         CharSequence timestamp = DateUtils.getRelativeTimeSpanString(timeInMilliseconds, System.currentTimeMillis(), DateUtils.SECOND_IN_MILLIS);
         holder.timestamp.setText(timestamp);
@@ -111,7 +115,6 @@ public class NewsAdapter extends
 
         TextView title, body, timestamp;
         ImageView imageViewUrl;
-
 
 
         public MyViewHolder(@NonNull View itemView) {
