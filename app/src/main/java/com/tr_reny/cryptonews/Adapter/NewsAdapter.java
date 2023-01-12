@@ -14,7 +14,6 @@ import com.bumptech.glide.Glide;
 import com.tr_reny.cryptonews.Model.Data;
 import com.tr_reny.cryptonews.R;
 
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -67,13 +66,25 @@ public class NewsAdapter extends
         String timestamp = sdf.format(date);
         holder.timestamp.setText(timestamp);
 
+        //ToDo
+        /**
+         * Suggetion to To display the timestamp in the format of "1 hour ago" or "1 min ago",
+         * you can use a library like com.github.curioustechizen.ago:library to handle the calculations
+         * and formatting for you.
+         *
+         **/
+        // long timeInMilliseconds = dataList.get(position).getPublished_on() * 1000L;
+        //RelativeTimeTextView timestampView = holder.itemView.findViewById(R.id.timestamp);
+        //timestampView.setReferenceTime(timeInMilliseconds);
+
 
     }
 
     @Override
     public int getItemCount() {
-        return dataList == null ? 0 :dataList.size();
+        return dataList == null ? 0 : dataList.size();
     }
+
     @Override
     public int getItemViewType(int position) {
         return (position == dataList.size() - 1 && isLoadingAdded) ? LOADING : ITEM;
@@ -113,11 +124,16 @@ public class NewsAdapter extends
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView title, body , timestamp;
+        TextView title, body, timestamp;
         ImageView imageViewUrl;
 
 
-
+        /**
+         * Suggetion to To display the timestamp in the format of "1 hour ago" or "1 min ago",
+         * you can use a library like com.github.curioustechizen.ago:library to handle the calculations
+         * and formatting for you.
+         **/
+        //RelativeTimeTextView timestamp;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
