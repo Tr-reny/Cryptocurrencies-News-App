@@ -1,7 +1,6 @@
 package com.tr_reny.cryptonews.Adapter;
 
 import android.content.Context;
-import android.graphics.Movie;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,11 +14,12 @@ import com.bumptech.glide.Glide;
 import com.tr_reny.cryptonews.Model.Data;
 import com.tr_reny.cryptonews.R;
 
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import com.github.curioustechizen.ago.RelativeTimeTextView;
+
 
 public class NewsAdapter extends
         RecyclerView.Adapter<NewsAdapter.MyViewHolder> {
