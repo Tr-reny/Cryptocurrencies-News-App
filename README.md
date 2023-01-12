@@ -13,7 +13,7 @@ Cryptocurrencies-News-App
 </p>
 
 <p align="center">
- This is a Cryptocurrency News App with Modern Design that Gets Data from Rapid API and Displays it RecyclerView
+ This is a Cryptocurrency News App with Modern Design that Gets Data from https://www.cryptocompare.com and Displays it RecyclerView
 </p>
 
 <p align="center">
