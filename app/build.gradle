@@ -45,8 +45,6 @@ dependencies {
     //for circular image
     implementation 'de.hdodenhof:circleimageview:3.0.1'
 
-    //curioustechizen
-   // implementation 'com.github.curioustechizen.ago:library:1.3.4'
 
 
 
