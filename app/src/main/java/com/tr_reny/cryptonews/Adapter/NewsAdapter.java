@@ -19,8 +19,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * NewsAdapter is the adapter class for displaying the news data on a RecyclerView.
- * It binds the data from the JSON file to the view holder and displays it on the RecyclerView
+ * The NewsAdapter class is an adapter class for displaying news data in a RecyclerView.
+ * It binds data from a JSON file to the view holder and displays it on the RecyclerView.
+ * The class uses Glide library to display the images, and converts timestamp from JSON to human-readable format.
+ * The class also has loading footer feature which allows for pagination.
  */
 
 public class NewsAdapter extends
@@ -79,10 +81,17 @@ public class NewsAdapter extends
         return (position == dataList.size() - 1 && isLoadingAdded) ? LOADING : ITEM;
     }
 
+    /**
+     * Method to add a loading footer to the RecyclerView
+     */
     public void addLoadingFooter() {
         isLoadingAdded = true;
         add(new Data());
     }
+
+    /**
+     * Method to remove the loading footer from the RecyclerView
+     */
 
     public void removeLoadingFooter() {
         isLoadingAdded = false;
@@ -111,6 +120,9 @@ public class NewsAdapter extends
         return dataList.get(position);
     }
 
+    /**
+     * Inner class ViewHolder to hold the views of the RecyclerView
+     */
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView title, body, timestamp;
