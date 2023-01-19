@@ -51,10 +51,11 @@ Cryptocurrencies-News-App
 * News Layout
 *
 ## DEMO APP :
-CLick this --->
+CLick To Download Demo App</br>
 <a href="https://drive.google.com/file/d/1OZsANrt97BtVr5btxXWiI66px-x42VVi/view?usp=sharing">GOODLE DRIVE LINK
-  </a>
-<---to download Demo app
+  </a> </br>
+  <a href="https://docs.google.com/uc?export=download&id=1OZsANrt97BtVr5btxXWiI66px-x42VVi">DIRECT LINK</a>
+  </br>
 
 ## Screenshoot
 
