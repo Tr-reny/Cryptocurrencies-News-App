@@ -5,9 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 
-import com.tr_reny.cryptonews.DarkModePrefManager;
 import com.tr_reny.cryptonews.R;
 
 public class splash extends AppCompatActivity {

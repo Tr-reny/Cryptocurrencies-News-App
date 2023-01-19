@@ -5,6 +5,7 @@
       <map>
         <entry key="app/news/src/main/res/layout/activity_main.xml" value="0.1859375" />
         <entry key="app/news/src/main/res/layout/layout_news.xml" value="0.22" />
+        <entry key="app/src/main/res/drawable-anydpi/ic_action_about.xml" value="0.188" />
         <entry key="app/src/main/res/drawable-v24/button_ripple_effect.xml" value="0.1165" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.118" />
         <entry key="app/src/main/res/drawable-v24/ic_menu_manage.xml" value="0.118" />

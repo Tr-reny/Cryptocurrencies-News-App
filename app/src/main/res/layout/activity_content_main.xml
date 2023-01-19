@@ -49,17 +49,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp">
-            </LinearLayout>
+                android:layout_marginBottom="20dp"></LinearLayout>
 
             <RelativeLayout
                 android:id="@+id/rl_featuredNews"
                 android:layout_width="wrap_content"
-                android:visibility="gone"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:visibility="gone">
 
-            <!--replace with recycler view-->
-            <include layout="@layout/layout_featured_news" />
+                <!--replace with recycler view-->
+                <include layout="@layout/layout_featured_news" />
 
             </RelativeLayout>
 
