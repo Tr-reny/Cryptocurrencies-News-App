@@ -69,7 +69,6 @@ CLick To Download Demo App</br>
   <img src="https://user-images.githubusercontent.com/57016982/194015853-2c4efb60-301b-4edc-aca6-b2b1b395e8cd.png" width="400" height="800">
 </div>
 
-</p>
 
 ## Contributors :
 
