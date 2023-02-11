@@ -59,6 +59,9 @@ CLick To Download Demo App</br>
 
 ## Screenshoot
 
+![cryptoNews](https://user-images.githubusercontent.com/57016982/218252155-a219fb87-1bd9-4eb3-b952-5fdc3d264c54.jpg)
+
+
 <div style="display: flex; justify-content: center;">
   <img src="https://user-images.githubusercontent.com/57016982/194015719-baf3add0-5660-4039-a8d6-a500543e765e.png" width="400" height="800">
   <img src="https://user-images.githubusercontent.com/57016982/194015740-4fe05d00-858f-4591-a83f-2c351ecc8c9b.png" width="400" height="800">
